@@ -68,7 +68,7 @@ const projects = [
 <template>
   <section id="projects" class="py-24 px-4 max-w-6xl mx-auto">
     <h2 class="font-display text-4xl sm:text-5xl font-bold text-zinc-900 dark:text-stone-100 mb-16">
-      Selected Work<span class="text-amber-500">.</span>
+      Selected Projects<span class="text-amber-500">.</span>
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <button
