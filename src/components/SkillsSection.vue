@@ -2,10 +2,11 @@
 const skills = [
   { name: 'Vue.js', level: 90 },
   { name: 'Tailwind CSS', level: 85 },
-  { name: 'JavaScript', level: 88 },
-  { name: 'Node.js', level: 75 },
-  { name: 'TypeScript', level: 70 },
-  { name: 'Figma', level: 80 },
+  { name: 'JavaScript', level: 70 },
+  { name: 'Node.js', level: 68 },
+  { name: 'Python', level: 75 },
+  { name: 'SQL', level: 80 },
+  { name: 'Prompt Engineering', level: 300 },
 ]
 </script>
 

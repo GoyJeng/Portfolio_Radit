@@ -6,7 +6,7 @@
         Radit<br/>Shalom
       </h1>
       <p class="text-lg sm:text-xl text-zinc-500 dark:text-zinc-400 mb-10 max-w-xl mx-auto">
-        Frontend Developer & UI Designer passionate about crafting beautiful digital experiences.
+        Computer Science Graduate  Frontend & Full Stack Developer  Building practical web applications and computer vision projects.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#projects" class="px-8 py-3 bg-zinc-900 dark:bg-stone-100 text-stone-100 dark:text-zinc-900 rounded-full font-medium hover:opacity-80 transition-opacity">
