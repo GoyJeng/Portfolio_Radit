@@ -1,11 +1,14 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref , computed } from 'vue'
 
 const props = defineProps(['project'])
 const emit = defineEmits(['close'])
 
 const lightboxImg = ref(null)
 
+const filteredImages = computed(() =>
+  (props.project.images || []).filter(img => img)
+)
 const openLightbox = (img) => { lightboxImg.value = img }
 const closeLightbox = () => { lightboxImg.value = null }
 
@@ -61,40 +64,41 @@ onUnmounted(() => {
           class="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-stone-200 dark:bg-zinc-800 hover:bg-stone-300 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-400 transition-colors"
         >✕</button>
 
-        <!-- Image Gallery -->
-        <div class="grid grid-cols-3 gap-2 p-4">
-          <template v-if="project.images && project.images.length > 0">
-            <button
-              v-for="(img, i) in project.images"
-              :key="i"
-              @click="openLightbox(img)"
-              class="group relative w-full h-36 rounded-2xl overflow-hidden bg-stone-200 dark:bg-zinc-800 focus:outline-none"
-            >
-              <img
-                :src="img"
-                :alt="`${project.title} screenshot ${i + 1}`"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <!-- Hover overlay -->
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                <span class="opacity-0 group-hover:opacity-100 text-white text-2xl transition-opacity duration-300">🔍</span>
-              </div>
-            </button>
-            <!-- Placeholder ถ้ารูปไม่ครบ 3 -->
-            <div
-              v-for="i in (3 - project.images.length)"
-              :key="'ph-' + i"
-              class="w-full h-36 rounded-2xl bg-stone-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-400 text-sm"
-            >No Image</div>
-          </template>
-          <template v-else>
-            <div
-              v-for="i in 3"
-              :key="'ph-' + i"
-              class="w-full h-36 rounded-2xl bg-stone-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-400 text-sm"
-            >No Image</div>
-          </template>
-        </div>
+<!-- Image Gallery -->
+<div
+  class="grid gap-2 p-4"
+  :class="{
+    'grid-cols-1': filteredImages.length === 1,
+    'grid-cols-2': filteredImages.length === 2,
+    'grid-cols-3': filteredImages.length >= 3,
+  }"
+>
+  <template v-if="filteredImages.length > 0">
+    <button
+      v-for="(img, i) in filteredImages"
+      :key="i"
+      @click="openLightbox(img)"
+      class="group relative w-full rounded-2xl overflow-hidden bg-stone-200 dark:bg-zinc-800 focus:outline-none"
+      :class="filteredImages.length === 1 ? 'h-64' : 'h-36'"
+    >
+      <img
+        :src="img"
+        :alt="`${project.title} screenshot ${i + 1}`"
+        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+        <span class="opacity-0 group-hover:opacity-100 text-white text-2xl transition-opacity duration-300">🔍</span>
+      </div>
+    </button>
+  </template>
+  <template v-else>
+    <div
+      v-for="i in 3"
+      :key="'ph-' + i"
+      class="h-36 rounded-2xl bg-stone-200 dark:bg-zinc-800 flex items-center justify-center text-zinc-400 text-sm"
+    >No Image</div>
+  </template>
+</div>
 
         <!-- Content -->
         <div class="px-6 pb-6">

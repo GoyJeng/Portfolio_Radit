@@ -38,7 +38,7 @@ const projects = [
       'รองรับการอัปโหลดไฟล์ PDF และตรวจสอบความถูกต้อง',
     ],
     images: ['/images/Doc01.png','/images/Doc02.png','/images/Doc03.png'],
-    qr: ['/images/Document Submission System.png'],
+    qr: '/images/Document Submission System.png',
     reportFile: '',
     demo: '',
     github: '',
