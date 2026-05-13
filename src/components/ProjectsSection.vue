@@ -10,8 +10,8 @@ const projects = [
     desc: 'A computer vision application for detecting driver drowsiness using OpenCV and Flutter.',
     tags: ['OpenCV', 'Flutter', 'Python'],
     bg: 'bg-amber-100 dark:bg-amber-900/20',
-    description: `ระบบตรวจจับความง่วงนอนของผู้ขับขี่แบบ Real-time ด้วย Computer Vision
-โดยใช้กล้องหน้ารถตรวจจับสภาพดวงตาและแจ้งเตือนเมื่อพบความเสี่ยง`,
+    description: `ระบบตรวจจับอาการง่วงนอนของผู้ขับขี่แบบ Real-time ด้วย Computer Vision
+โดยใช้กล้องมือถือตรวจจับสภาพดวงตาและปาก เพื่อแจ้งเตือนเมื่อพบความเสี่ยงที่จะเกิดอุบัติเหตุจากการง่วงนอน`,
     details: [
       'ใช้ OpenCV ร่วมกับ dlib สำหรับ Face landmark detection',
       'คำนวณ Eye Aspect Ratio (EAR) เพื่อตรวจจับการหลับตา',
@@ -29,13 +29,13 @@ const projects = [
     desc: 'A web application for submitting and managing academic documents.',
     tags: ['Vue.js', 'TypeScript', 'SQL'],
     bg: 'bg-sky-100 dark:bg-sky-900/20',
-    description: `ระบบรับส่งเอกสารทางวิชาการออนไลน์ สำหรับนักศึกษาและอาจารย์
-รองรับการอัปโหลด ตรวจสอบสถานะ และอนุมัติเอกสารแบบ paperless`,
+    description: `ระบบใบนำส่งของทางมหาวิทยาลัยพะเยา ที่ต้องการเปลี่ยนการทำใบนำส่งแบบเดิมไปเป็นระบบอิเล็กทรอนิกส์
+    ช่วยทำให้การจัดทำใบนำส่งสะดวกและมีประสิทธิภาพในการตรวจสอบมากขึ้น`,
     details: [
+      'เก็บความต้องการจากผู้ใช้และปรับปรุง UI ให้สะดวกต่อการใช้งาน',
       'พัฒนา Frontend ด้วย Vue.js + TypeScript',
       'ออกแบบฐานข้อมูล SQL สำหรับจัดการเอกสารและสถานะ',
-      'ระบบแจ้งเตือนเมื่อเอกสารได้รับการอนุมัติหรือปฏิเสธ',
-      'รองรับการอัปโหลดไฟล์ PDF และตรวจสอบความถูกต้อง',
+      'ทดสอบระบบและปรับปรุงตาม feedback จากผู้ใช้จริง',
     ],
     images: ['/images/Doc01.png','/images/Doc02.png','/images/Doc03.png'],
     qr: '/images/Document Submission System.png',
@@ -48,13 +48,13 @@ const projects = [
     desc: 'The exam attendance system uses facial recognition and ID card verification for entry into the exam room.',
     tags: ['React', 'TypeScript', 'Node.js'],
     bg: 'bg-rose-100 dark:bg-rose-900/20',
-    description: `ระบบเช็คชื่อเข้าห้องสอบด้วยการจดจำใบหน้าและตรวจสอบบัตรประจำตัว
-ช่วยลดการทุจริตและเพิ่มความแม่นยำในการบันทึกการเข้าสอบ`,
+    description: `ระบบเช็คชื่อเข้าสอบที่ใช้การจดจำใบหน้าและตรวจสอบบัตรนักศึกษาเพื่อยืนยันตัวตนในการเข้าสอบ 
+    เพื่อป้องกันการโกงและเพิ่มความสะดวกในการเช็คชื่อเข้าห้องสอบ,
     details: [
+      'เก็บข้อมูลใบหน้าของนักศึกษาไว้ในระบบเพื่อใช้ในการจดจำ',
       'ใช้ Face Recognition API สำหรับยืนยันตัวตนนักศึกษา',
-      'ตรวจสอบบัตรนักศึกษาด้วย OCR ควบคู่กับการจดจำใบหน้า',
-      'สร้าง Dashboard ด้วย React + TypeScript สำหรับผู้คุมสอบ',
-      'บันทึกและ export รายงานการเข้าสอบผ่าน Node.js backend',
+      'ตรวจสอบบัตรประชาชนด้วย OCR ควบคู่กับการจดจำใบหน้า',
+      'พัฒนาเว็ปไซต์ด้วย React และ Node.js สำหรับจัดการข้อมูลและแสดงผล',
     ],
     images: [''],
     qr: '',
