@@ -8,7 +8,7 @@
         Are you looking for employees? If you like me, please hire me.
       </p>
       
-        <a href="mailto:your@email.com"
+        <a href="mailto:radidchalom@email.com"
         class="inline-block px-10 py-4 bg-amber-500 hover:bg-amber-400 text-white rounded-full font-medium text-lg transition-colors"
       >
         radidchalom@email.com
